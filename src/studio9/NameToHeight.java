@@ -20,8 +20,24 @@ public class NameToHeight {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 
-		// FIXME
-		throw new NotYetImplementedException();
-
+		Map<String, Double> mapNameToHeight= new HashMap<String,Double>();
+		mapNameToHeight.put("Amelia", 65.0);
+		mapNameToHeight.put("Tasha", 69.0);
+		mapNameToHeight.put("Maeve", 66.0);
+		boolean a=false;
+		while(a==false) {
+		System.out.println("What name do you want to look up?");
+		String name = in.next();
+		if(name.equals("quit")) {
+			a=true;
+		}
+		else if(mapNameToHeight.containsKey(name)) {
+		double height = mapNameToHeight.get(name);
+		System.out.println(name+"'s height is "+height);
+		}
+		else {
+			System.out.println("This name is not in the map. Please enter a new name.");
+		}
+		}
 	}
-}
+	}
